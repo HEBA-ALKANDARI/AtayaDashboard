@@ -1,74 +1,12 @@
 <div class="flex h-screen bg-gray-100">
-  <!-- Sidebar -->
-  <aside class="w-64 bg-white shadow-md hidden md:block">
-    <div class="p-4 text-lg font-semibold text-gray-700">Dashboard</div>
-    <nav class="mt-4">
-      <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
-      <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Orders</a>
-      <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Products</a>
-    </nav>
-  </aside>
+
+  <!-- Side Bar -->
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
 
   <!-- Main Content -->
   <div class="flex-1 flex flex-col overflow-hidden">
-    <!-- Top Navigation -->
-    <header class="flex items-center justify-between p-4 bg-white shadow">
-      <h1 class="text-xl font-semibold text-gray-700">Admin Dashboard</h1>
-      <div class="space-x-4">
-        <button class="text-gray-600">🔔</button>
-        <button class="text-gray-600">👤</button>
-      </div>
-    </header>
-
-    <!-- Dashboard Content -->
-    <main class="flex-1 overflow-y-auto p-6">
-      <!-- Stats Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h2 class="text-sm text-gray-500">Total Orders</h2>
-          <p class="text-2xl font-bold text-gray-800">1,245</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h2 class="text-sm text-gray-500">Revenue</h2>
-          <p class="text-2xl font-bold text-gray-800">$34,600</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h2 class="text-sm text-gray-500">Customers</h2>
-          <p class="text-2xl font-bold text-gray-800">845</p>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow">
-          <h2 class="text-sm text-gray-500">Pending Orders</h2>
-          <p class="text-2xl font-bold text-gray-800">76</p>
-        </div>
-      </div>
-
-      <!-- Orders Table -->
-      <div class="bg-white rounded-lg shadow overflow-x-auto">
-        <table class="min-w-full">
-          <thead class="bg-gray-100 text-gray-600">
-            <tr>
-              <th class="px-4 py-2 text-left text-sm">Order ID</th>
-              <th class="px-4 py-2 text-left text-sm">Customer</th>
-              <th class="px-4 py-2 text-left text-sm">Amount</th>
-              <th class="px-4 py-2 text-left text-sm">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b" *ngFor="let order of orders">
-              <td class="px-4 py-2">{{ order.id }}</td>
-              <td class="px-4 py-2">{{ order.customer }}</td>
-              <td class="px-4 py-2">{{ order.amount | currency }}</td>
-              <td class="px-4 py-2">
-                <span [ngClass]="{
-                  'text-green-600': order.status === 'Completed',
-                  'text-yellow-600': order.status === 'Pending',
-                  'text-red-600': order.status === 'Cancelled'
-                }">{{ order.status }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+    
+    
   </div>
 </div>

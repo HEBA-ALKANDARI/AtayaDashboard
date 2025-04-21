@@ -1,0 +1,74 @@
+<!-- <div class="p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Products</h2>
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+      <table class="min-w-full">
+        <thead class="bg-gray-100 text-gray-600">
+          <tr>
+            <th class="px-4 py-2 text-left text-sm">Image</th>
+            <th class="px-4 py-2 text-left text-sm">Product ID</th>
+            <th class="px-4 py-2 text-left text-sm">Name</th>
+            <th class="px-4 py-2 text-left text-sm">Category</th>
+            <th class="px-4 py-2 text-left text-sm">Price (KWD)</th>
+            <th class="px-4 py-2 text-left text-sm">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b" *ngFor="let product of products">
+            <td class="px-4 py-2">
+              <img [src]="product.image" alt="{{ product.name }}" class="w-12 h-12 object-cover rounded" />
+            </td>
+            <td class="px-4 py-2">{{ product.id }}</td>
+            <td class="px-4 py-2">{{ product.name }}</td>
+            <td class="px-4 py-2">{{ product.category }}</td>
+            <td class="px-4 py-2">{{ product.price | currency:'KWD' }}</td>
+            <td class="px-4 py-2">{{ product.stock }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-gray-800">Products</h2>
+      <button
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+        (click)="addProduct()"
+      >
+        + Add New Product
+      </button>
+    </div>
+  
+    <div class="bg-white rounded-lg shadow overflow-x-auto">
+      <table class="min-w-full">
+        <thead class="bg-gray-100 text-gray-600">
+          <tr>
+            <th class="px-4 py-2 text-left text-sm">Image</th>
+            <th class="px-4 py-2 text-left text-sm">Product ID</th>
+            <th class="px-4 py-2 text-left text-sm">Name</th>
+            <th class="px-4 py-2 text-left text-sm">Category</th>
+            <th class="px-4 py-2 text-left text-sm">Price (KWD)</th>
+            <th class="px-4 py-2 text-left text-sm">Stock</th>
+            <th class="px-4 py-2 text-left text-sm">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b" *ngFor="let prod of product; let i = index">
+            <td class="px-4 py-2">
+              <img [src]="prod.image" alt="{{ prod.name }}" class="w-12 h-12 object-cover rounded" />
+            </td>
+            <td class="px-4 py-2">{{ prod.id }}</td>
+            <td class="px-4 py-2">{{ prod.name }}</td>
+            <td class="px-4 py-2">{{ prod.category }}</td>
+            <td class="px-4 py-2">{{ prod.price | currency:'KWD' }}</td>
+            <td class="px-4 py-2">{{ prod.stock }}</td>
+            <td class="px-4 py-2 space-x-2">
+              <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded text-sm" (click)="editProduct(product)">Edit</button>
+              <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm" (click)="updateProduct(product)">Update</button>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm" (click)="deleteProduct(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

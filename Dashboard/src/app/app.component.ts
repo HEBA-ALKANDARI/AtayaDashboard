@@ -1,16 +1,12 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { SideBarComponent } from "./side-bar/side-bar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NgClass, CommonModule],
+  imports: [RouterOutlet, CommonModule, SideBarComponent],
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  orders = [
-    { id: 'ORD-001', customer: 'Alice Smith', amount: 240, status: 'Completed' },
-    { id: 'ORD-002', customer: 'John Doe', amount: 180, status: 'Pending' },
-    { id: 'ORD-003', customer: 'Jane Cooper', amount: 310, status: 'Cancelled' },
-    { id: 'ORD-004', customer: 'Bob Martin', amount: 120, status: 'Completed' },
-  ];
+export class AppComponent {  
 }
