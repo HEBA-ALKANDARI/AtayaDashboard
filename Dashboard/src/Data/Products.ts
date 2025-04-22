@@ -63,4 +63,13 @@ export const PRODUCTS: Products[] = [
     image: 'https://bf1af2.a-cdn.akinoncloud.com/products/2024/11/20/208971/927e0ac0-d249-4c99-8341-8e70f65ecfca_size3840_cropCenter.jpg',
     status: 'active',
   },
-];
+  {
+    id: 'P-007',
+    name: 'Handmade Soap',
+    category: 'Grocery',
+    price: 3.0,
+    stock: 20,
+    image: 'https://images.squarespace-cdn.com/content/v1/5e1ef6efd354fa5f5bab1acd/460a316e-cdb3-4e0d-8431-967b325d81ab/Oatmeal+%26+Lavender+Naturally+Handmade+Soap+5.jpg?format=1000w',
+    status: 'active',
+  },
+]; 
